@@ -1,6 +1,6 @@
 {
   "extName": { "message": "Split Translate" },
-  "extDescription": { "message": "Open the current page in Chrome's split view with the original on the left and a translation on the right. Scrolling and navigation stay in sync. Translation runs on your device." },
+  "extDescription": { "message": "See a page's original and translation side by side in Chrome split view, with synced scrolling. Translation runs on your device." },
   "actionTitle": { "message": "Show original and translation side by side" },
   "actionTitleActive": { "message": "Split Translate: syncing with the other tab. Click to close the translated tab" },
   "actionTitlePaused": { "message": "Split Translate: paused while Chrome's page translation is on. Click to close the translated tab" },
