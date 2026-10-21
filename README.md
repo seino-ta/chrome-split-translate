@@ -91,3 +91,5 @@ See [PRIVACY.md](PRIVACY.md). The extension collects no data.
 ## License
 
 [MIT](LICENSE)
+
+The globe in the icon and store images is based on the `globe` icon from [Lucide](https://lucide.dev) (ISC License).

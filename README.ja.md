@@ -100,3 +100,5 @@ defaults delete com.google.chrome.for.testing AppleLanguages
 ## ライセンス
 
 [MIT](LICENSE)
+
+アイコンとストア用画像の地球儀は、[Lucide](https://lucide.dev) の `globe` アイコン（ISC ライセンス）を元にしています。
