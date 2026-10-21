@@ -64,6 +64,26 @@
 - 分割表示中に、アクセスを許可していない別のサイトへ移動すると、そのページは翻訳されません。
 - `chrome://` のページや Chrome ウェブストアでは使えません。iframe の中も翻訳しません。
 
+## 開発・テスト
+
+E2E テストでは、Playwright 同梱の Chromium（Chrome for Testing 155 以降。Split View API と `--load-extension` が使える）に拡張機能を読み込み、分割表示・翻訳・Chrome のページ翻訳との共存・スクロール同期・ページ遷移の同期を確認します。
+
+```sh
+npm install
+npm test            # 初回は Chromium をダウンロードします
+HEADED=1 npm test   # ブラウザを表示して実行
+```
+
+テストは一時ディレクトリにコピーした拡張機能に対して行います。コピーでは許可ダイアログを自動操作できないため `<all_urls>` を最初から許可し、Translator API を `[ja] 原文 原文` を返す偽物に差し替えるので、翻訳モデルは不要です。
+
+特定の表示言語の文言を確認するときは `LOCALE=en` または `LOCALE=ja` を付けます。付けない場合はブラウザが起動した言語のまま実行し、表示言語ごとの確認は省きます。macOS の Chrome は拡張機能の表示言語を `--lang` ではなくシステムの言語設定から決めるため、Chrome for Testing に対して事前に設定し、終わったら削除してください。
+
+```sh
+defaults write com.google.chrome.for.testing AppleLanguages '(en)'
+LOCALE=en npm test
+defaults delete com.google.chrome.for.testing AppleLanguages
+```
+
 ## プライバシー
 
 [PRIVACY.md](PRIVACY.md) を参照してください。データは一切収集しません。

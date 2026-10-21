@@ -64,6 +64,26 @@ To sync scrolling, the extension sends the element at 25% of the viewport height
 - After navigating to another site you have not granted access to, that page is not translated.
 - It does not work on `chrome://` pages or the Chrome Web Store, and it does not translate inside iframes.
 
+## Development / Testing
+
+The E2E suite loads the extension into Playwright's bundled Chromium (Chrome for Testing 155+, which supports the Split View API and `--load-extension`) and checks the split view, translation, Chrome page-translate coexistence, scroll sync, and navigation sync.
+
+```sh
+npm install
+npm test            # downloads Chromium on first run
+HEADED=1 npm test   # watch the browser
+```
+
+The test runs against a patched copy of the extension in a temp directory: it grants `<all_urls>` up front (the permission dialog cannot be automated) and replaces the Translator API with a fake that returns `[ja] <text> <text>`, so no translation model is needed.
+
+To check the UI strings for a specific locale, set `LOCALE=en` or `LOCALE=ja`. Without it, the test uses whatever language the browser starts in and skips the locale-specific checks. On macOS, Chrome picks the extension locale from the system language list rather than `--lang`, so set it for Chrome for Testing first and remove it afterwards:
+
+```sh
+defaults write com.google.chrome.for.testing AppleLanguages '(en)'
+LOCALE=en npm test
+defaults delete com.google.chrome.for.testing AppleLanguages
+```
+
 ## Privacy
 
 See [PRIVACY.md](PRIVACY.md). The extension collects no data.
