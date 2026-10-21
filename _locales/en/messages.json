@@ -1,0 +1,64 @@
+{
+  "extName": { "message": "Split Translate" },
+  "extDescription": { "message": "Open the current page in Chrome's split view with the original on the left and a translation on the right. Scrolling and navigation stay in sync. Translation runs on your device." },
+  "actionTitle": { "message": "Show original and translation side by side" },
+  "actionTitleActive": { "message": "Split Translate: syncing with the other tab. Click to close the translated tab" },
+  "actionTitlePaused": { "message": "Split Translate: paused while Chrome's page translation is on. Click to close the translated tab" },
+
+  "optionsTitle": { "message": "Split Translate Settings" },
+  "optionsLanguages": { "message": "Languages" },
+  "optionsSourceLanguage": { "message": "Original (left)" },
+  "optionsTargetLanguage": { "message": "Translate to (right)" },
+  "optionsOnDeviceHint": { "message": "Translation uses Chrome's built-in Translator API and runs on your device. Page content is never sent to an external server." },
+  "optionsPrepareModel": { "message": "Download translation model" },
+  "optionsPrepareModelHint": { "message": "Each language pair needs a one-time model download. Downloading it here lets translation start right away when you open a split view." },
+  "optionsSiteAccess": { "message": "Site access" },
+  "optionsAllSites": { "message": "Allow on all sites" },
+  "optionsAllSitesHint": { "message": "When off, you are asked for permission the first time you use the extension on each site. When on, it works on any site without asking." },
+  "optionsSync": { "message": "Sync" },
+  "optionsSyncScroll": { "message": "Sync scrolling" },
+  "optionsSyncNavigation": { "message": "Sync navigation (when one side opens another page, the other side follows)" },
+
+  "statusSameLanguage": { "message": "The original and target languages must be different." },
+  "statusSaved": { "message": "Saved." },
+  "statusAllSitesOn": { "message": "Allowed on all sites." },
+  "statusAllSitesOff": { "message": "Switched back to per-site permission." },
+  "statusNoTranslator": { "message": "The Translator API is not available in this version of Chrome." },
+  "statusPairUnsupported": { "message": "This language pair is not supported." },
+  "statusPreparing": { "message": "Preparing…" },
+  "statusDownloading": {
+    "message": "Downloading… $PERCENT$%",
+    "placeholders": { "percent": { "content": "$1" } }
+  },
+  "statusModelReady": {
+    "message": "Ready (test translation: $SAMPLE$)",
+    "placeholders": { "sample": { "content": "$1" } }
+  },
+  "statusFailed": {
+    "message": "Failed: $ERROR$",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+
+  "bannerTranslating": { "message": "Translating…" },
+  "bannerRemaining": {
+    "message": "Translating… $COUNT$ left",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "bannerDone": { "message": "Translated" },
+  "bannerDownloading": {
+    "message": "Downloading translation model… $PERCENT$%",
+    "placeholders": { "percent": { "content": "$1" } }
+  },
+  "bannerNoTranslator": { "message": "The Translator API is not available in this version of Chrome." },
+  "bannerPairUnsupported": {
+    "message": "Translation from $SOURCE$ to $TARGET$ is not supported.",
+    "placeholders": { "source": { "content": "$1" }, "target": { "content": "$2" } }
+  },
+  "bannerPausedForChrome": { "message": "Paused while Chrome's page translation is on" },
+  "bannerClickToStart": { "message": "Click to start translating" },
+  "bannerStartButton": { "message": "Start" },
+  "bannerStartFailed": {
+    "message": "Could not start translating: $ERROR$",
+    "placeholders": { "error": { "content": "$1" } }
+  }
+}

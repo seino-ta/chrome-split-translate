@@ -1,0 +1,64 @@
+{
+  "extName": { "message": "Split Translate" },
+  "extDescription": { "message": "今見ているページを Chrome の分割表示で並べ、左に原文・右に翻訳を表示します。スクロールとページ遷移は左右で同期します。翻訳は端末内で行います。" },
+  "actionTitle": { "message": "原文と翻訳を並べて表示" },
+  "actionTitleActive": { "message": "Split Translate: もう片方のタブと同期中。クリックで翻訳タブを閉じる" },
+  "actionTitlePaused": { "message": "Split Translate: Chrome の翻訳を使用中のため一時停止中。クリックで翻訳タブを閉じる" },
+
+  "optionsTitle": { "message": "Split Translate 設定" },
+  "optionsLanguages": { "message": "翻訳する言語" },
+  "optionsSourceLanguage": { "message": "原文（左）" },
+  "optionsTargetLanguage": { "message": "翻訳先（右）" },
+  "optionsOnDeviceHint": { "message": "翻訳は Chrome 内蔵の Translator API で端末内で行われ、ページの内容は外部に送信されません。" },
+  "optionsPrepareModel": { "message": "翻訳モデルを準備" },
+  "optionsPrepareModelHint": { "message": "初回は言語ペアごとに翻訳モデルのダウンロードが必要です。ここで準備しておくと、分割表示を開いたときにすぐ翻訳が始まります。" },
+  "optionsSiteAccess": { "message": "サイトへのアクセス" },
+  "optionsAllSites": { "message": "すべてのサイトで許可する" },
+  "optionsAllSitesHint": { "message": "オフのときは、サイトごとに初めて使うときだけ許可を求めます。オンにすると確認なしでどのサイトでも使えます。" },
+  "optionsSync": { "message": "同期" },
+  "optionsSyncScroll": { "message": "スクロールを同期する" },
+  "optionsSyncNavigation": { "message": "ページ遷移を同期する（片方で別のページを開くと、もう片方も同じページを開く）" },
+
+  "statusSameLanguage": { "message": "原文と翻訳先に同じ言語は指定できません" },
+  "statusSaved": { "message": "保存しました" },
+  "statusAllSitesOn": { "message": "すべてのサイトで許可しました" },
+  "statusAllSitesOff": { "message": "サイトごとに許可する設定に戻しました" },
+  "statusNoTranslator": { "message": "この Chrome では Translator API が使えません" },
+  "statusPairUnsupported": { "message": "この言語の組み合わせには対応していません" },
+  "statusPreparing": { "message": "準備中…" },
+  "statusDownloading": {
+    "message": "ダウンロード中… $PERCENT$%",
+    "placeholders": { "percent": { "content": "$1" } }
+  },
+  "statusModelReady": {
+    "message": "準備できました（テスト翻訳: $SAMPLE$）",
+    "placeholders": { "sample": { "content": "$1" } }
+  },
+  "statusFailed": {
+    "message": "失敗しました: $ERROR$",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+
+  "bannerTranslating": { "message": "翻訳中…" },
+  "bannerRemaining": {
+    "message": "翻訳中… 残り $COUNT$ 件",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "bannerDone": { "message": "翻訳しました" },
+  "bannerDownloading": {
+    "message": "翻訳モデルをダウンロード中… $PERCENT$%",
+    "placeholders": { "percent": { "content": "$1" } }
+  },
+  "bannerNoTranslator": { "message": "この Chrome では Translator API が使えません" },
+  "bannerPairUnsupported": {
+    "message": "$SOURCE$ → $TARGET$ の翻訳には対応していません",
+    "placeholders": { "source": { "content": "$1" }, "target": { "content": "$2" } }
+  },
+  "bannerPausedForChrome": { "message": "Chrome の翻訳を使用中のため、拡張機能の翻訳を止めています" },
+  "bannerClickToStart": { "message": "翻訳を始めるにはクリックしてください" },
+  "bannerStartButton": { "message": "翻訳を開始" },
+  "bannerStartFailed": {
+    "message": "翻訳を開始できませんでした: $ERROR$",
+    "placeholders": { "error": { "content": "$1" } }
+  }
+}

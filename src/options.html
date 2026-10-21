@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Split Translate</title>
+  <style>
+    :root { color-scheme: light dark; --muted: #6b7280; --accent: #2563eb; --ok: #15803d; --ng: #b91c1c; }
+    body { font: 14px/1.6 system-ui, sans-serif; max-width: 640px; margin: 32px auto; padding: 0 16px; }
+    h1 { font-size: 20px; }
+    fieldset { border: 1px solid #d1d5db; border-radius: 8px; margin: 0 0 20px; padding: 12px 16px 16px; }
+    legend { font-weight: 600; padding: 0 4px; }
+    label { display: block; margin: 8px 0 4px; }
+    select, textarea { font: inherit; }
+    textarea { width: 100%; box-sizing: border-box; min-height: 110px; font-family: ui-monospace, monospace; }
+    .row { display: flex; gap: 16px; align-items: end; flex-wrap: wrap; }
+    .hint { color: var(--muted); font-size: 12px; margin: 4px 0 0; }
+    .check { display: flex; gap: 8px; align-items: center; margin: 6px 0; }
+    .check label { margin: 0; }
+    button { font: inherit; padding: 6px 16px; border-radius: 6px; border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; }
+    button.secondary { background: transparent; color: var(--accent); }
+    #status, #modelStatus { margin-left: 12px; }
+    .ok { color: var(--ok); }
+    .ng { color: var(--ng); }
+  </style>
+</head>
+<body>
+  <h1 data-i18n="optionsTitle"></h1>
+
+  <fieldset>
+    <legend data-i18n="optionsLanguages"></legend>
+    <div class="row">
+      <div>
+        <label for="sourceLanguage" data-i18n="optionsSourceLanguage"></label>
+        <select id="sourceLanguage"></select>
+      </div>
+      <div>→</div>
+      <div>
+        <label for="targetLanguage" data-i18n="optionsTargetLanguage"></label>
+        <select id="targetLanguage"></select>
+      </div>
+    </div>
+    <p class="hint" data-i18n="optionsOnDeviceHint"></p>
+    <p>
+      <button type="button" id="prepareModel" class="secondary" data-i18n="optionsPrepareModel"></button>
+      <span id="modelStatus"></span>
+    </p>
+    <p class="hint" data-i18n="optionsPrepareModelHint"></p>
+  </fieldset>
+
+  <fieldset>
+    <legend data-i18n="optionsSiteAccess"></legend>
+    <div class="check"><input type="checkbox" id="allSites"><label for="allSites" data-i18n="optionsAllSites"></label></div>
+    <p class="hint" data-i18n="optionsAllSitesHint"></p>
+  </fieldset>
+
+  <fieldset>
+    <legend data-i18n="optionsSync"></legend>
+    <div class="check"><input type="checkbox" id="syncScroll"><label for="syncScroll" data-i18n="optionsSyncScroll"></label></div>
+    <div class="check"><input type="checkbox" id="syncNavigation"><label for="syncNavigation" data-i18n="optionsSyncNavigation"></label></div>
+  </fieldset>
+
+  <p id="status" class="hint"></p>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>
